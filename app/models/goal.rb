@@ -20,5 +20,5 @@ class Goal < ActiveRecord::Base
                       greater_than_or_equal_to: 0,
                       less_than_or_equal_to: 1000000000
                     }
-  validates :visible, presence: true
+  validates :visible, inclusion: { in: [true, false] }
 end

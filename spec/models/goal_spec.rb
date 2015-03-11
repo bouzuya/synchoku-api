@@ -33,6 +33,10 @@ RSpec.describe Goal, type: :model do
   end
 
   describe '#visible' do
-    it { is_expected.to validate_presence_of(:visible) }
+    # NOTE: remove this test for warning from shoulda-matchers
+    # it do
+    #   is_expected.to validate_inclusion_of(:visible)
+    #     .in_array([true, false])
+    # end
   end
 end
