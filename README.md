@@ -6,6 +6,10 @@ This product is one of [the bouzuya's shuburi][shuburi]. The product was release
 
 Demo: [sinchoku-api.herokuapp.com](https://sinchoku-api.herokuapp.com/)
 
+# License
+
+[MIT](LICENSE)
+
 # Author
 
 [bouzuya][] &lt;[m@bouzuya.net][email]&gt; ([bouzuya.net][url])
