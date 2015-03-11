@@ -1,3 +1,3 @@
-# sinchoku API documentation
+# synchoku API documentation
 
 TODO

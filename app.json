@@ -1,12 +1,12 @@
 {
-  "name": "sinchoku API",
-  "description": "An API server for sinchoku",
+  "name": "synchoku API",
+  "description": "An API server for synchoku",
   "keywords": [
     "bouzuya",
-    "sinchoku"
+    "synchoku"
   ],
-  "website": "https://github.com/bouzuya/sinchoku-api",
-  "repository": "https://github.com/bouzuya/sinchoku-api",
+  "website": "https://github.com/bouzuya/synchoku-api",
+  "repository": "https://github.com/bouzuya/synchoku-api",
   "env": {
     "SECRET_KEY_BASE": {
       "description": "A secret key for verifying the integrity of signed cookies.",
