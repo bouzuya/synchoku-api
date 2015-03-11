@@ -14,6 +14,11 @@
 require 'rails_helper'
 
 RSpec.describe Goal, type: :model do
+  describe '(factory)' do
+    subject { create(:goal) }
+    it { is_expected.to be_valid }
+  end
+
   describe '#date' do
     it { is_expected.to validate_presence_of(:date) }
   end
