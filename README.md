@@ -10,6 +10,10 @@ Demo: [sinchoku-api.herokuapp.com](https://sinchoku-api.herokuapp.com/)
 
 See [app.json](app.json).
 
+# Documentation
+
+See [docs/](docs/).
+
 # Heroku Button
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
