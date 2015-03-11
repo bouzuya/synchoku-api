@@ -1,0 +1,23 @@
+{
+  "name": "sinchoku API",
+  "description": "An API server for sinchoku",
+  "keywords": [
+    "bouzuya",
+    "sinchoku"
+  ],
+  "website": "https://github.com/bouzuya/sinchoku-api",
+  "repository": "https://github.com/bouzuya/sinchoku-api",
+  "env": {
+    "SECRET_KEY_BASE": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "3"
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ]
+}

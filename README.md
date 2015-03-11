@@ -6,6 +6,14 @@ This product is one of [the bouzuya's shuburi][shuburi]. The product was release
 
 Demo: [sinchoku-api.herokuapp.com](https://sinchoku-api.herokuapp.com/)
 
+# Configuration (Environment Variables)
+
+See [app.json](app.json).
+
+# Heroku Button
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 # Badge
 
 [![Circle CI][circle-ci-badge]][circle-ci]
