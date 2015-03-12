@@ -17,6 +17,18 @@
 require 'rails_helper'
 
 RSpec.describe Mark, type: :model do
+  describe '(factory)' do
+    context ':mark_only' do
+      subject { build(:mark_only) }
+      it { is_expected.to_not be_valid }
+    end
+
+    context ':mark' do
+      subject { build(:mark) }
+      it { is_expected.to be_valid }
+    end
+  end
+
   describe '#date' do
     it { is_expected.to validate_presence_of(:date) }
   end
