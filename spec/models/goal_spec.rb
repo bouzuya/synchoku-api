@@ -23,6 +23,10 @@ RSpec.describe Goal, type: :model do
     it { is_expected.to validate_presence_of(:date) }
   end
 
+  describe '#marks' do
+    it { is_expected.to have_many(:marks) }
+  end
+
   describe '#token' do
     it { is_expected.to validate_presence_of(:token) }
   end

@@ -12,6 +12,8 @@
 #
 
 class Goal < ActiveRecord::Base
+  has_many :marks
+
   validates :date, presence: true
   validates :token, presence: true
   validates :value, presence: true,
