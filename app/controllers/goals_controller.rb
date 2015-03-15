@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :set_goal, only: [:show]
+  before_action :set_goal, only: [:show, :update]
 
   def index
     @goals = Goal.all
@@ -13,6 +13,13 @@ class GoalsController < ApplicationController
   end
 
   def show
+  end
+
+  def update
+    Goal.transaction do
+      @goal.update!(goal_params)
+    end
+    render :show
   end
 
   private
