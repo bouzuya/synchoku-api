@@ -1,6 +1,6 @@
 class MarksController < ApplicationController
   before_action :set_goal, only: [:index, :create]
-  before_action :set_mark, only: [:show]
+  before_action :set_mark, only: [:show, :update]
 
   def index
     @marks = @goal.marks
@@ -14,6 +14,13 @@ class MarksController < ApplicationController
   end
 
   def show
+  end
+
+  def update
+    Mark.transaction do
+      @mark.update!(mark_params)
+    end
+    render :show
   end
 
   private
