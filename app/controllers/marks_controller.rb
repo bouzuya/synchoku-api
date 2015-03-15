@@ -1,6 +1,6 @@
 class MarksController < ApplicationController
   before_action :set_goal, only: [:index, :create]
-  before_action :set_mark, only: [:show, :update]
+  before_action :set_mark, only: [:show, :update, :destroy]
 
   def index
     @marks = @goal.marks
@@ -21,6 +21,13 @@ class MarksController < ApplicationController
       @mark.update!(mark_params)
     end
     render :show
+  end
+
+  def destroy
+    Mark.transaction do
+      @mark.destroy!
+    end
+    head :no_content
   end
 
   private
