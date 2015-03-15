@@ -1,15 +1,26 @@
 class MarksController < ApplicationController
-  before_action :set_goal, only: [:index]
+  before_action :set_goal, only: [:index, :create]
   before_action :set_mark, only: [:show]
 
   def index
     @marks = @goal.marks
   end
 
+  def create
+    Mark.transaction do
+      @mark = @goal.marks.create!(mark_params)
+    end
+    render :show, status: :created
+  end
+
   def show
   end
 
   private
+
+  def mark_params
+    params.permit(:date, :value)
+  end
 
   def set_goal
     @goal = Goal.find_by!(id: params[:goal_id])

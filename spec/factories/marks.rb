@@ -16,7 +16,7 @@
 
 FactoryGirl.define do
   factory :mark_only, class: :mark do
-    date "2015-03-12 14:36:55"
+    date Time.zone.now
     value 1
     goal nil
 
