@@ -5,10 +5,21 @@ class GoalsController < ApplicationController
     @goals = Goal.all
   end
 
+  def create
+    Goal.transaction do
+      @goal = Goal.create!(goal_params)
+    end
+    render :show, status: :created
+  end
+
   def show
   end
 
   private
+
+  def goal_params
+    params.permit(:date, :token, :value, :visible)
+  end
 
   def set_goal
     @goal = Goal.find_by!(id: params[:id])
