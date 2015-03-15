@@ -14,7 +14,7 @@ RSpec.describe 'goals#show', type: :request do
   its(:body) do
     is_expected.to match_json_expression(
       id: model.id,
-      date: model.date,
+      date: model.date.iso8601,
       token: model.token,
       value: model.value,
       visible: model.visible

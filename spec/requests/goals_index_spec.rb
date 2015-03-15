@@ -16,14 +16,14 @@ RSpec.describe 'goals#index', type: :request do
     is_expected.to match_json_expression([
       {
         id: goal1.id,
-        date: goal1.date,
+        date: goal1.date.iso8601,
         token: goal1.token,
         value: goal1.value,
         visible: goal1.visible
       },
       {
         id: goal2.id,
-        date: goal2.date,
+        date: goal2.date.iso8601,
         token: goal2.token,
         value: goal2.value,
         visible: goal2.visible
