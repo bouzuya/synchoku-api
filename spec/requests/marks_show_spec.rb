@@ -4,11 +4,11 @@ RSpec.describe 'marks#show', type: :request do
   let!(:goal) { create(:goal) }
   let!(:model) { create(:mark, goal: goal) }
 
-  let!(:env) { nil }
   let!(:params) { nil }
   let!(:method) { :get }
   let!(:path) { mark_path(model) }
 
+  let!(:env) { nil }
   before { send(method, path, params, env) }
   subject { response }
   its(:status) { is_expected.to be 200 }

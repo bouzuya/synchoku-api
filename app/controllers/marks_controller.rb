@@ -1,5 +1,5 @@
 class MarksController < ApplicationController
-  skip_before_filter :authorize, only: [:index]
+  skip_before_filter :authorize, only: [:index, :show]
   before_action :set_goal, only: [:index, :create]
   before_action :set_mark, only: [:show, :update, :destroy]
 
