@@ -5,11 +5,11 @@ RSpec.describe 'marks#index', type: :request do
   let!(:mark1) { create(:mark, goal: goal) }
   let!(:mark2) { create(:mark, goal: goal) }
 
-  let!(:env) { nil }
   let!(:params) { nil }
   let!(:method) { :get }
   let!(:path) { goal_marks_path(goal) }
 
+  let!(:env) { nil }
   before { send(method, path, params, env) }
   subject { response }
   its(:status) { is_expected.to be 200 }
