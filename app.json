@@ -8,6 +8,10 @@
   "website": "https://github.com/bouzuya/synchoku-api",
   "repository": "https://github.com/bouzuya/synchoku-api",
   "env": {
+    "SYNCHOKU_TOKEN": {
+      "description": "A secret token for authorization.",
+      "generator": "secret"
+    },
     "SECRET_KEY_BASE": {
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
