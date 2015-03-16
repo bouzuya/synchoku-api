@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'goals#show', type: :request do
-  let!(:env) { nil }
+  let!(:model) { create(:goal) }
   let!(:params) { nil }
   let!(:method) { :get }
   let!(:path) { goal_path(model) }
-
-  let!(:model) { create(:goal) }
-
+  let!(:env) { nil }
   before { send(method, path, params, env) }
   subject { response }
   its(:status) { is_expected.to be 200 }
