@@ -9,8 +9,7 @@ RSpec.describe 'goals#create', type: :request do
     let!(:env) { nil }
     before { send(method, path, params, env) }
     subject { response }
-    its(:status) { is_expected.to be 401 }
-    its(:body) { is_expected.to match_json_expression(status: 'error') }
+    it_behaves_like '401'
   end
 
   context 'with authorization header' do
