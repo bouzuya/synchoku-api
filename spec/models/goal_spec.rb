@@ -28,7 +28,8 @@ RSpec.describe Goal, type: :model do
   end
 
   describe '#token' do
-    it { is_expected.to validate_presence_of(:token) }
+    # NOTE: set default value
+    # it { is_expected.to validate_presence_of(:token) }
   end
 
   describe '#value' do

@@ -23,4 +23,12 @@ class Goal < ActiveRecord::Base
                       less_than_or_equal_to: 1000000000
                     }
   validates :visible, inclusion: { in: [true, false] }
+
+  before_validation :default_values
+
+  private
+
+  def default_values
+    self.token ||= SecureRandom.hex
+  end
 end
