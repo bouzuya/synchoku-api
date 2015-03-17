@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'goals#show', type: :request do
-  let!(:model) { create(:goal) }
+  let!(:model) { create(:goal, visible: true) }
 
   let!(:params) { nil }
   let!(:method) { :get }

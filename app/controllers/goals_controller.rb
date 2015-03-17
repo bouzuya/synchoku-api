@@ -1,8 +1,8 @@
 class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :update, :destroy]
+  before_action :set_goals, only: [:index]
 
   def index
-    @goals = Goal.all
   end
 
   def create
@@ -37,5 +37,19 @@ class GoalsController < ApplicationController
 
   def set_goal
     @goal = Goal.find_by!(id: params[:id])
+    # authorize resource
+    return if @token
+    return if @goal.token == params[:token]
+    return if @goal.visible
+    render_unauthorized
+  end
+
+  def set_goals
+    @goals = Goal.all
+    # authorize resource
+    return if @token
+    @goals = @goals.where(visible: true)
+    return unless params[:token]
+    @goals = @goals.concat @goals.where(token: params[:token])
   end
 end
