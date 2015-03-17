@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'goals#destroy', type: :request do
+RSpec.describe 'marks#destroy', type: :request do
   let!(:goal) { create(:goal) }
   let!(:model) { create(:mark, goal: goal) }
 
