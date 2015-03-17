@@ -33,7 +33,7 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    params.permit(:date, :token, :value, :visible)
+    params.permit(:date, :value, :visible)
   end
 
   def set_goal

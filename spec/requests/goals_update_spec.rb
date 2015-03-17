@@ -6,7 +6,7 @@ RSpec.describe 'goals#update', type: :request do
     {
       id: model.id,
       date: model.date + 1.days,
-      token: model.token + '1',
+      # token
       value: model.value + 1,
       visible: !model.visible
     }
@@ -31,7 +31,7 @@ RSpec.describe 'goals#update', type: :request do
       is_expected.to match_json_expression(
         id: params[:id],
         date: params[:date].iso8601,
-        token: params[:token],
+        token: String,
         value: params[:value],
         visible: params[:visible]
       )

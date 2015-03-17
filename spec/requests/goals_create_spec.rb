@@ -22,7 +22,7 @@ RSpec.describe 'goals#create', type: :request do
       is_expected.to match_json_expression(
         id: Numeric,
         date: params[:date].iso8601,
-        token: params[:token],
+        token: String,
         value: params[:value],
         visible: params[:visible]
       )
