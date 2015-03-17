@@ -15,7 +15,8 @@ class Goal < ActiveRecord::Base
   has_many :marks
 
   validates :date, presence: true
-  validates :token, presence: true
+  validates :token, presence: true,
+                    uniqueness: true
   validates :value, presence: true,
                     numericality: {
                       only_integer: true,
@@ -29,6 +30,13 @@ class Goal < ActiveRecord::Base
   private
 
   def default_values
-    self.token ||= SecureRandom.hex
+    self.token ||= generate_unique_token
+  end
+
+  def generate_unique_token
+    while true
+      token = SecureRandom.hex
+      return token unless Goal.exists? token: token
+    end
   end
 end

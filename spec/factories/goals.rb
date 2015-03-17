@@ -13,8 +13,8 @@
 
 FactoryGirl.define do
   factory :goal do
-    date Time.zone.now
-    token 'token'
+    date { Time.zone.now }
+    token { SecureRandom.hex }
     value 1
     visible false
   end
