@@ -47,5 +47,11 @@ class MarksController < ApplicationController
 
   def set_mark
     @mark = Mark.find_by!(id: params[:id])
+    # authorize resource
+    @goal = @mark.goal
+    return if @token
+    return if @goal.token == params[:token]
+    return if @goal.visible
+    render_unauthorized
   end
 end
